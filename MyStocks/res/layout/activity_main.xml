@@ -16,15 +16,14 @@
 
         <TextView
             android:id="@+id/enterSymbolText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/enter_symbol_text" />
 
         <EditText
             android:id="@+id/enterSymbolData"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="5" 
             android:layout_weight="1"
             android:inputType="text">
 
@@ -59,23 +58,27 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/DataContainer"
+        android:id="@+id/tableRow3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/azure"
-            android:layout_weight="1" >
+        android:layout_weight="1" 
+        >
 
         <ScrollView
-            android:id="@+id/scrollView1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
 
             <TableLayout
+            	android:id="@+id/stocksScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding	="5dp"
-                android:stretchColumns="yes" >
+                android:stretchColumns="yes"
+            	android:padding="5dp" >
+
             </TableLayout>
+
         </ScrollView>
 
     </TableRow>

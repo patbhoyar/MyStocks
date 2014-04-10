@@ -7,6 +7,11 @@
     <string name="enter_symbol_text">Enter Stock Symbol</string>
     <string name="enter_symbol_button">Find</string>
     
+    
+    <string name="ok">OK</string>
+    <string name="something_wrong">Something Went Wrong</string>
+    <string name="no_stock_entered">Please Enter a Stock Symbol</string>
+    
     <string name="stocks_heading_text">Stock Data</string>
     <string name="clear_stock_data_button">Clear Stock Data</string>
     
