@@ -3,60 +3,151 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <TextView
+        android:id="@+id/companyNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yahoo Inc"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:padding="5dp" />
+
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
         <TextView
-            android:id="@+id/textView1"
-            android:layout_width="fill_parent"
+            android:id="@+id/yearLowText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
+            android:text="@string/year_low_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/yearLowValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
     </TableRow>
     
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/yearHighText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year_high_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/yearHighValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
     </TableRow>
     
     <TableRow
         android:id="@+id/tableRow3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/daysLowText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/days_low_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/daysLowValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
     </TableRow>
     
     <TableRow
         android:id="@+id/tableRow4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/daysHighText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/days_high_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/daysHighValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
     </TableRow>
     
     <TableRow
         android:id="@+id/tableRow5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/lastPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_price_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/lastPriceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
     </TableRow>
     
     <TableRow
         android:id="@+id/tableRow6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/changeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/changeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
     </TableRow>
     
     <TableRow
         android:id="@+id/tableRow7"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/dailyPriceRangeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/daily_price_range_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/dailyPriceRangeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_weight="2" />
     </TableRow>
-    
-    <TableRow
-        android:id="@+id/tableRow8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-    </TableRow>
-
 </TableLayout>

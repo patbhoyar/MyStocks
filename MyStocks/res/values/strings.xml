@@ -19,5 +19,12 @@
     <string name="get_quote_button">Get Quote</string>
     <string name="get_web_button">View Web</string>
     
-
+	
+    <string name="year_low_text">Year Low : </string>
+    <string name="year_high_text">Year High : </string>
+    <string name="days_low_text">Day\'s Low : </string>
+    <string name="days_high_text">Day\'s High : </string>
+    <string name="last_price_text">Last Price : </string>
+    <string name="change_text">Change : </string>
+    <string name="daily_price_range_text">Daily Price Range</string>
 </resources>
