@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class StockInfoActivity extends Activity{
@@ -47,7 +48,7 @@ public class StockInfoActivity extends Activity{
 	private String change = "";
 	private String daysRange = "";
 	
-	private String yahooURLfirst = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22";
+	private String yahooURLfirst = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22";
 	private String yahooURLSecond = "%22)&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
 	
 	@Override
@@ -56,19 +57,19 @@ public class StockInfoActivity extends Activity{
 		setContentView(R.layout.stock_info);
 		
 		Intent intent = getIntent();
-		String stockSymbol = intent.getStringExtra(KEY_NAME);
+		String stockSymbol = intent.getStringExtra(MainActivity.STOCK_SYMBOL);
 		
 		companyNameText = (TextView) findViewById(R.id.companyNameText);
-		yearLowText = (TextView) findViewById(R.id.yearLowText);
-		yearHighText = (TextView) findViewById(R.id.yearHighText);
-		daysLowText = (TextView) findViewById(R.id.daysLowText);
-		daysHighText = (TextView) findViewById(R.id.daysHighText);
-		lastPriceText = (TextView) findViewById(R.id.lastPriceText);
-		changeText = (TextView) findViewById(R.id.changeText);
-		dailyPriceRangeText = (TextView) findViewById(R.id.dailyPriceRangeText);
+		yearLowText = (TextView) findViewById(R.id.yearLowValue);
+		yearHighText = (TextView) findViewById(R.id.yearHighValue);
+		daysLowText = (TextView) findViewById(R.id.daysLowValue);
+		daysHighText = (TextView) findViewById(R.id.daysHighValue);
+		lastPriceText = (TextView) findViewById(R.id.lastPriceValue);
+		changeText = (TextView) findViewById(R.id.changeValue);
+		dailyPriceRangeText = (TextView) findViewById(R.id.dailyPriceRangeValue);
 		
 		final String yqlURL = yahooURLfirst + stockSymbol + yahooURLSecond;
-		
+
 		new MyAsyncTask().execute(yqlURL);
 	}
 	
@@ -76,15 +77,17 @@ public class StockInfoActivity extends Activity{
 
 		protected String doInBackground(String... args) {
 			
+			Log.v("Yo", "Yo");
+			
 			try {
 				
-				URL url = new URL(args[0]);
-				
-				URLConnection conn = url.openConnection();
-				
+				URL url = new URL(args[0]);			
+				URLConnection conn;
+				conn = url.openConnection();
+
 				HttpURLConnection httpconn = (HttpURLConnection) conn;
 				int responseCode = httpconn.getResponseCode();
-				
+				Log.v("Yos", "Yos");
 				if (responseCode == HttpURLConnection.HTTP_OK) {
 					 InputStream in = httpconn.getInputStream();
 					 
@@ -109,7 +112,7 @@ public class StockInfoActivity extends Activity{
 				}
 				
 			} catch (Exception e) {
-				// TODO: handle exception
+				Log.v("Exception Detected", e.getMessage());
 			}
 
 			return null;

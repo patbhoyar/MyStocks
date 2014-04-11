@@ -1,12 +1,16 @@
 package com.example.mystocks;
 
 import java.util.Arrays;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -14,10 +18,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText; 
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	public static final String STOCK_SYMBOL = "com.example.stockQuote.STOCK";
 	SharedPreferences stockSymbolsEntered;
 	EditText enterSymbolData;
 	TableLayout stocksScrollView;
@@ -108,8 +114,43 @@ public class MainActivity extends Activity {
 		Button getQuoteButton = (Button) newStockRow.findViewById(R.id.getQuoteButton);
 		Button viewWebButton = (Button) newStockRow.findViewById(R.id.viewWebButton);
 		
+		getQuoteButton.setOnClickListener(getQuoteListener);
+		viewWebButton.setOnClickListener(viewWebListener);
+		
 		stocksScrollView.addView(newStockRow, arrayIndex);
 	}
+	
+	private String getStockName(View v){
+		TableRow tRow = (TableRow) v.getParent();
+		TextView stockView = (TextView) tRow.findViewById(R.id.retrievedStockTextView);
+		return stockView.getText().toString();
+	}
+	
+	public OnClickListener getQuoteListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			
+			String stockName = getStockName(v);
+
+			Intent intent = new Intent(MainActivity.this, StockInfoActivity.class);
+			intent.putExtra(STOCK_SYMBOL, stockName);
+			startActivity(intent);
+		}
+	};
+	
+	public OnClickListener viewWebListener = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			String stockName = getStockName(v);
+			
+			String yqlBaseQuery = "http://finance.yahoo.com/q?s="+stockName;
+			
+			Intent getStockWebPage = new Intent(Intent.ACTION_VIEW, Uri.parse(yqlBaseQuery));
+			startActivity(getStockWebPage);
+		}
+	};
 
 	@SuppressLint("NewApi")
 	private void saveStockSymbol(String newStock){
